@@ -31,7 +31,7 @@ $url = "http://localhost:8880/projekt/rest/narocilo/vrniID/$idUpo&$idKnj&$idmas"
   $fields = array("method" => "mymethod", "email" => "myemail");
   //echo $isci." ".$cat;ž
 
-  $url = "http://localhost:8880/projekt/rest/izposoja/izpo/$result&$idKnj";
+  $url = "http://localhost:8880/projekt/rest/izposoja/izpo/$result&$idKnj&$idUpo";
     $fields = json_encode($fields);
     $ch = curl_init();
 

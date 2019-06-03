@@ -54,7 +54,7 @@ $_SERVER['REQUEST_METHOD']
 $fields = array("method" => "mymethod", "email" => "myemail");
 //echo $isci." ".$cat;ž
 $idUpo=$_SESSION['id'];
-$masina=2;
+$masina=1;
 $url = "http://localhost:8880/projekt/rest/narocilo/celo/$idUpo&$masina";
   $fields = json_encode($fields);
   $ch = curl_init();
@@ -79,9 +79,10 @@ $url = "http://localhost:8880/projekt/rest/narocilo/celo/$idUpo&$masina";
     <div class="container">
       <div class="row" style="width:100%">
         <?php
+
         if(isset($obj)){
         foreach($obj as $i) { //foreach element in $arr
-          
+
           ?>
         <div style="disply:inline-block" class="col-lg-4">
         <div class="features-icons-icon " style="height:300px; display:inline-block">
