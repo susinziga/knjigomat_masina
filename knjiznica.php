@@ -56,7 +56,7 @@ $_SERVER['REQUEST_METHOD']
           <h1 class="mb-5">Pozdravljen/a  <?php echo str_replace('"', '',  $_SESSION["ime"])." ".str_replace('"', '',  $_SESSION["priimek"]); ?>.</h1>
         </div>
         <?php
-      $masina=2;
+      $masina=$_SESSION['masina'];
 
         $fields = array("method" => "mymethod", "email" => "myemail");
         //echo $isci." ".$cat;ž
@@ -132,8 +132,22 @@ $url = "http://localhost:8880/projekt/rest/masina/iskanjeMasina/$masina";
         <div class="features-icons-icon " style="height:300px; display:inline-block">
 
             <div>
-              <a href="knjiga.php?id=<?php echo $i['id'] ?>">
-              <img src="<?php echo $i['naslovnica'] ?>" style="height:300px">
+              <a href="knjigaMasina.php?id=<?php echo $i['id'] ?>">
+                <?php if(isset($i['slika'])) {
+
+                $bytes=$obj['slika'];
+                //echo '<img src="data:image/jpeg;base64,'.base64_encode($str->load()) .'" />';
+                $string = implode(array_map("chr", $bytes)); //Convert it to string
+
+                $base64 = base64_encode($string); //Encode to base64
+                $img = "<img src= 'data:image/jpeg;base64, $base64' style='height:250px'/>"; //Create the image
+                }
+                else{
+                  $img = "<img src= 'img/noimg.jpg' style='height:250px'/>";
+                }
+
+            ?>
+                <?php echo $img ?>
               </a>
             </div>
 
