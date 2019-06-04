@@ -135,7 +135,7 @@ $url = "http://localhost:8880/projekt/rest/masina/iskanjeMasina/$masina";
               <a href="knjigaMasina.php?id=<?php echo $i['id'] ?>">
                 <?php if(isset($i['slika'])) {
 
-                $bytes=$obj['slika'];
+                $bytes=$i['slika'];
                 //echo '<img src="data:image/jpeg;base64,'.base64_encode($str->load()) .'" />';
                 $string = implode(array_map("chr", $bytes)); //Convert it to string
 
