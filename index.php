@@ -25,7 +25,7 @@ session_start();
   <link href="css/landing-page.min.css" rel="stylesheet">
 
 </head>
-
+<?php $_SESSION['masina']=1;  ?>
 <body>
   <section class="features-icons bg-light text-center">
     <div class="container">
