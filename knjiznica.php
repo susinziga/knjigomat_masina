@@ -33,8 +33,7 @@ session_start();
 $_SERVER['REQUEST_METHOD']
 ?>
 
-<?php echo $_SESSION["id"];
- ?>
+
 
 
 
