@@ -54,7 +54,7 @@ $_SERVER['REQUEST_METHOD']
 $fields = array("method" => "mymethod", "email" => "myemail");
 //echo $isci." ".$cat;ž
 $idUpo=$_SESSION['id'];
-$masina=1;
+$masina=2;
 $url = "http://localhost:8880/projekt/rest/narocilo/celo/$idUpo&$masina";
   $fields = json_encode($fields);
   $ch = curl_init();
