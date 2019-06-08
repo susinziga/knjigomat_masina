@@ -190,8 +190,8 @@ if(array_key_exists('prevzemi',$_POST)){
 
   $fields = array("method" => "mymethod", "email" => "myemail");
   //echo $isci." ".$cat;ž
-
-  $url = "http://localhost:8880/projekt/rest/izposoja/izposoja/$idKnjiga&$idUpo";
+  $masina=$_SESSION["masina"];
+  $url = "http://localhost:8880/projekt/rest/izposoja/izposoja/$idKnjiga&$idUpo&$masina";
     $fields = json_encode($fields);
     $ch = curl_init();
 
