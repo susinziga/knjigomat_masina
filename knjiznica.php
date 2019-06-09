@@ -3,6 +3,9 @@
 <?php
 
 session_start();
+ini_set('memory_limit', '-1');
+include 'masinasession.php';
+$masina=$_SESSION["masina"];
  ?>
 <head>
 
@@ -52,10 +55,15 @@ $_SERVER['REQUEST_METHOD']
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
+          <h2>Knjigomat <?php echo $_SESSION["masinaIme"] ?> </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
           <h1 class="mb-5">Pozdravljen/a  <?php echo str_replace('"', '',  $_SESSION["ime"])." ".str_replace('"', '',  $_SESSION["priimek"]); ?>.</h1>
         </div>
         <?php
-      $masina=$_SESSION['masina'];
+
 
         $fields = array("method" => "mymethod", "email" => "myemail");
         //echo $isci." ".$cat;ž

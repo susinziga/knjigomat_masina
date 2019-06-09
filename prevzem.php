@@ -3,6 +3,7 @@
 <?php
 
 session_start();
+include 'masinasession.php';
  ?>
 <head>
 
