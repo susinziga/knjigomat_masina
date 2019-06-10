@@ -169,7 +169,6 @@ $url = "http://localhost:8880/projekt/rest/knjige/knjiga/$id";
           <h2><?php echo $obj['naslov'] ?></h2>
           <p class="lead mb-0">Avtor: <?php echo $obj['avtor'] ?></p>
           <p class="lead mb-0">Žanr: <?php echo $obj['vrsta'] ?></p>
-          <?php if( $obj['stanje']=='navoljo'){ ?>
           <br />
           <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 
@@ -218,7 +217,6 @@ if(array_key_exists('prevzemi',$_POST)){
        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       Knjiga izposojena!
      </div>
-    <?php } ?>
 
 
 
