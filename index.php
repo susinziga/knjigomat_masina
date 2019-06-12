@@ -3,7 +3,7 @@
     <style>
 body {
   background: #ffffff url("img/smi.jpg") no-repeat center center;
-  background-size: 40% ;
+  background-size: 100% ;
 }
 
 
