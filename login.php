@@ -44,7 +44,7 @@ $url = "http://localhost:8880/projekt/rest/upoti/upot";
   $_SESSION["id"] =$id;
   $_SESSION["ime"] =$ime;
   $_SESSION["priimek"] =$priimek;
-
+  $_SESSION["timer"]=time();
 
   $link="knjiznica.php";
   echo $link;

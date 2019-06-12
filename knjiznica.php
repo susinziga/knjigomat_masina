@@ -7,6 +7,18 @@ ini_set('memory_limit', '-1');
 include 'masinasession.php';
 $masina=$_SESSION["masina"];
  ?>
+ <?php
+if(!isset($_SESSION["id"])){
+  header("Location: index.php");
+}
+if(time()-$_SESSION["timer"]>120){
+  header("Location: odjava.php");
+}
+else{
+  $_SESSION["timer"]=time();
+}
+
+  ?>
 <head>
 
   <meta charset="utf-8">
@@ -44,7 +56,7 @@ $_SERVER['REQUEST_METHOD']
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="index.php">Knjigomat</a>
-        <a class="navbar-brand" href="index.php">Odjava</a>
+        <a class="navbar-brand" href="odjava.php">Odjava</a>
 
     </div>
   </nav>
@@ -133,7 +145,7 @@ $url = "http://localhost:8880/projekt/rest/masina/iskanjeMasina/$masina";
         <?php
         if(isset($obj)){
         foreach($obj as $i) { //foreach element in $arr
-
+          if($i["stanje"]!="vmasini") continue;
           ?>
         <div style="disply:inline-block" class="col-lg-4">
         <div class="features-icons-icon " style="height:300px; display:inline-block">

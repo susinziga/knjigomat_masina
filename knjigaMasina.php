@@ -11,6 +11,18 @@
 session_start();
 include 'masinasession.php';
  ?>
+ <?php
+if(!isset($_SESSION["id"])){
+  header("Location: index.php");
+}
+if(time()-$_SESSION["timer"]>120){
+  header("Location: odjava.php");
+}
+else{
+  $_SESSION["timer"]=time();
+}
+
+  ?>
 <head>
 
   <meta charset="utf-8">
@@ -180,7 +192,7 @@ $url = "http://localhost:8880/projekt/rest/knjige/knjiga/$id";
       </div>
 
   </section>
-<?php } ?>
+
 <?php
 if(array_key_exists('prevzemi',$_POST)){
   $idUpo=$_SESSION['id'];
@@ -207,66 +219,27 @@ if(array_key_exists('prevzemi',$_POST)){
 
     curl_close($ch);
 
+    header("Location: knjiznica.php");
 
 
 
     if($result=='Uspesno'){
-    }
-     ?>
-     <div class="alert" style="padding: 20px; background-color: green; color: white; margin-bottom: 15px;">
-       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      Knjiga izposojena!
-     </div>
-
-
-
-
-  <!-- Footer -->
-  <footer class="footer bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-          <ul class="list-inline mb-2">
-            <li class="list-inline-item">
-              <a href="#">About</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Contact</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li>
-          </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
-        </div>
-        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-facebook fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fab fa-instagram fa-2x fa-fw"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+      ?>
+      <div class="alert" style="padding: 20px; background-color: green; color: white; margin-bottom: 15px;">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+       Knjiga izposojena!
       </div>
-    </div>
-  </footer>
+      <?php
+
+    }
+  }
+     ?>
+
+
+
+
+
+
 
 
   <!-- Bootstrap core JavaScript -->

@@ -53,7 +53,7 @@ $_SERVER['REQUEST_METHOD']
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <video id="preview"></video>
+        <video id="preview" style="margin:auto"></video>
         <script type="text/javascript">
           let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
           scanner.addListener('scan', function (content) {
@@ -119,7 +119,7 @@ if($result=='uspesno'){
 
       alert(data);
       if(data=='dela'){
-        alert(data);
+        alert("Knjiga vrnjena");
        }
        else{
          alert("nedela");

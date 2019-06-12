@@ -5,6 +5,18 @@
 session_start();
 include 'masinasession.php';
  ?>
+ <?php
+if(!isset($_SESSION["id"])){
+  header("Location: index.php");
+}
+if(time()-$_SESSION["timer"]>120){
+  header("Location: odjava.php");
+}
+else{
+  $_SESSION["timer"]=time();
+}
+
+  ?>
 <head>
 
   <meta charset="utf-8">
@@ -89,7 +101,7 @@ $url = "http://localhost:8880/projekt/rest/narocilo/celo/$idUpo&$masina";
         <div class="features-icons-icon " style="height:300px; display:inline-block">
 
             <div>
-              <a href="knjiga.php?id=<?php echo $i['id'] ?>">
+
                 <?php if(isset($i['slika'])) {
                 $bytes=$i['slika'];
                 //echo '<img src="data:image/jpeg;base64,'.base64_encode($str->load()) .'" />';
@@ -103,7 +115,7 @@ $url = "http://localhost:8880/projekt/rest/narocilo/celo/$idUpo&$masina";
                 } ?>
 
               <?php echo $img ?>
-              </a>
+            
             </div>
 
 

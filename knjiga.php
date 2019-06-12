@@ -11,6 +11,18 @@
 session_start();
 include 'masinasession.php';
  ?>
+ <?php
+if(!isset($_SESSION["id"])){
+  header("Location: index.php");
+}
+if(time()-$_SESSION["timer"]>120){
+  header("Location: odjava.php");
+}
+else{
+  $_SESSION["timer"]=time();
+}
+
+  ?>
 <head>
 
   <meta charset="utf-8">
@@ -184,7 +196,7 @@ $url = "http://localhost:8880/projekt/rest/knjige/knjiga/$id";
       </div>
 
   </section>
-<?php } ?>
+
 <?php
 if(array_key_exists('naroci',$_POST)){
   $idUpo=$_SESSION['id'];
@@ -216,6 +228,7 @@ if(array_key_exists('naroci',$_POST)){
 
     if($result=='Uspesno'){
     }
+  }
      ?>
      <div class="alert" style="padding: 20px; background-color: green; color: white; margin-bottom: 15px;">
        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
