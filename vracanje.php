@@ -122,7 +122,7 @@ if($result=='uspesno'){
         alert("Knjiga vrnjena");
        }
        else{
-         alert("nedela");
+      //   alert("nedela");
        }
 
     }

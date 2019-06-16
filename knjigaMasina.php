@@ -219,7 +219,7 @@ if(array_key_exists('prevzemi',$_POST)){
 
     curl_close($ch);
 
-    header("Location: knjiznica.php");
+   // header("Location: knjiznica.php");
 
 
 

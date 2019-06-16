@@ -22,10 +22,10 @@
     curl_close($ch);
 
     if($result=="dela"){
-      echo "dela";
+    //  echo "dela";
     }
     else{
-      echo "nedela";
+    //  echo "nedela";
     }
   }
      ?>
